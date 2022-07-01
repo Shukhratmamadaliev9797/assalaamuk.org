@@ -1,0 +1,58 @@
+.navbar {
+  &__container {
+    width: 100%;
+    padding: 1rem 0;
+    background-color: $background-color;
+    ul {
+      width: 90%;
+      // padding: 1rem;
+      margin: 0 auto;
+      height: 100%;
+      display: flex;
+      justify-content: space-around;
+      font-size: 1.7rem;
+      align-items: center;
+
+      color: $secondary-font !important;
+      li {
+        cursor: pointer;
+
+        a {
+          color: $secondary-text;
+        }
+      }
+    }
+  }
+  &__logo {
+    a {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: "Bowlby One", cursive;
+      color: #313030;
+    }
+  }
+  &__login {
+    button {
+      padding: 1.2rem 2.8rem;
+      background: $primary-color;
+      border-radius: 0.8rem;
+      font-size: 1.7rem;
+      font-family: $secondary-font;
+      color: $white-color !important;
+      border: transparent;
+    }
+  }
+  &__basket {
+    background: $secondary-color;
+    color: $white-color !important;
+    padding: 1.2rem 2rem;
+    border-radius: 0.8rem;
+    font-size: 1.7rem;
+    font-family: $secondary-font;
+    a {
+      color: $white-color !important;
+    }
+  }
+}

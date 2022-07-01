@@ -1,0 +1,46 @@
+.donationProcess {
+  width: 100%;
+  padding: 4rem 0;
+
+  &__container {
+    width: 50%;
+
+    margin: 0 auto;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__icon {
+    font-size: 3rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background: $white-color;
+    &-success {
+      color: $primary-color;
+    }
+    &-reject {
+      color: $secondary-text;
+    }
+  }
+  &__borderBox {
+    width: 100%;
+    background: $white-color;
+    height: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__border {
+    height: 0.7rem;
+    width: 100%;
+    &-success {
+      background: $primary-color;
+    }
+  }
+  &__text {
+    font-size: 1.5rem;
+    color: $secondary-text;
+    font-family: $secondary-font;
+  }
+}

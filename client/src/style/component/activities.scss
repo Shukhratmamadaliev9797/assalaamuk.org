@@ -1,0 +1,74 @@
+.activitiesComponent {
+  width: 100%;
+  margin: 5rem 0;
+  &__container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  &__categories {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding: 4rem;
+    width: 80%;
+    margin: 0 auto;
+    font-size: 2rem;
+
+    li {
+      cursor: pointer;
+      text-align: center;
+      color: $secondary-text;
+      hr {
+        margin: 2rem 0;
+      }
+    }
+    &-icon {
+      font-size: 3rem;
+    }
+  }
+  &__activity {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 4rem 0;
+    &-content {
+      width: 80%;
+      margin: 0 auto;
+      text-align: right;
+      h1 {
+        font-family: $primary-font;
+        font-size: 3rem;
+        color: $primary-text;
+        letter-spacing: 0.2rem;
+        margin-bottom: 2rem;
+        margin-top: 4rem;
+      }
+      p {
+        font-size: 1.8rem;
+        color: $secondary-text;
+        margin-bottom: 4rem;
+      }
+    }
+    &-action {
+      font-size: 1.8rem;
+      width: 100%;
+      a {
+        margin-right: 4rem;
+        color: $primary-color;
+      }
+      button {
+        background: $primary-color;
+        font-size: 1.8rem;
+        padding: 1rem 2rem;
+        border-radius: 0.5rem;
+        border: none;
+        color: $white-color;
+      }
+    }
+    &-image {
+      width: 100%;
+      img {
+        width: 80%;
+        border-radius: 0.8rem;
+      }
+    }
+  }
+}

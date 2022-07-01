@@ -1,0 +1,59 @@
+.cartAdded {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background: rgba($color: #000000, $alpha: 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__box {
+    width: 25%;
+    padding: 4rem 2rem;
+    background: $background-color;
+    border-radius: 0.5rem;
+    text-align: center;
+    position: relative;
+    &-exit {
+      position: absolute;
+      right: 3rem;
+      cursor: pointer;
+      top: 1.5rem;
+      font-size: 2rem;
+    }
+    &-icon {
+      color: #ff7396;
+      font-size: 6rem;
+      margin-bottom: 1rem;
+    }
+    &-title {
+      font-family: $primary-font;
+      color: $secondary-text;
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+    &-paragraph {
+      font-size: 1.2rem;
+      line-height: 1.5;
+      margin-bottom: 5rem;
+    }
+    &-action {
+      button {
+        margin: 1rem;
+        padding: 1rem 2rem;
+        border-radius: 0.5rem;
+        font-size: 1.2rem;
+        &:first-child {
+          border: 1px solid $primary-color;
+          color: $primary-color;
+        }
+        &:last-child {
+          background: $primary-color;
+          color: $white-color;
+          border: 1px solid $primary-color;
+        }
+      }
+    }
+  }
+}

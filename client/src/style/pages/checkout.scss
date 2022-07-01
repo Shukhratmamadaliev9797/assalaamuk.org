@@ -1,0 +1,35 @@
+.checkout {
+  width: 100%;
+
+  &__container {
+    width: 50%;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  &__summary {
+    padding: 4rem 0;
+
+    &-title {
+      font-family: $primary-font;
+      color: $secondary-text;
+      margin-bottom: 2rem;
+      span {
+        color: #ff7396;
+      }
+    }
+    &-items {
+      width: 100%;
+
+      li {
+        display: flex;
+        width: 30%;
+        justify-content: space-between;
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid #ddd;
+      }
+    }
+  }
+}

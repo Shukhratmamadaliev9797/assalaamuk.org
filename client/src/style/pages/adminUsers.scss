@@ -1,0 +1,62 @@
+.adminUsers {
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 30rem;
+  top: 8vh;
+
+  &__container {
+    width: 95%;
+    margin: 3rem auto;
+  }
+  &__title {
+    margin: 2rem 0rem;
+    font-size: 1rem;
+    color: $primary-text;
+    font-family: $primary-font;
+  }
+  &__usersBox {
+    width: 100%;
+    background: $white-color;
+    padding: 2rem 1rem;
+    border-radius: 0.5rem;
+  }
+  &__table {
+    width: 100%;
+    font-size: 1.5rem;
+    font-family: $secondary-font;
+    thead {
+      tr {
+        background: $light-color;
+        color: #444448;
+
+        th {
+          padding: 1rem;
+          border-radius: 0.5rem;
+        }
+      }
+    }
+    tbody {
+      tr {
+        padding: 2rem;
+        color: #57575b;
+        td {
+          padding: 2rem 1rem;
+          border-bottom: 1px solid rgb(236, 234, 234);
+
+          &:last-child {
+            display: flex;
+            justify-content: space-around;
+          }
+        }
+      }
+    }
+  }
+  &__edit {
+    cursor: pointer;
+    color: $primary-text;
+  }
+  &__delete {
+    cursor: pointer;
+    color: $red-color;
+  }
+}

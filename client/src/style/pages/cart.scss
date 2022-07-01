@@ -1,0 +1,73 @@
+.cart {
+  width: 100%;
+  &__container {
+    width: 50%;
+    margin: 0 auto;
+    font-size: 2rem;
+  }
+  &__paragraph {
+    text-align: center;
+    font-size: 1.5rem;
+    width: 30%;
+
+    margin: 0 auto;
+    margin-bottom: 4rem;
+    color: $secondary-text;
+  }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $white-color;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    &-icon {
+      background: $primary-color;
+      padding: 1rem;
+      color: $white-color;
+      border-radius: 0.5rem;
+      font-size: 3rem;
+    }
+    &-type {
+      font-family: $primary-font;
+      color: $secondary-text;
+    }
+    &-delete {
+      font-size: 3rem;
+      color: $red-color;
+    }
+  }
+  &__totalAmount {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    &-display {
+      background: $primary-color;
+      color: $white-color;
+      padding: 1rem;
+      border-radius: 0.5rem;
+    }
+  }
+  &__action {
+    margin-top: 5rem;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1rem;
+    a {
+      text-align: center;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      &:first-child {
+        border: 1px solid #ff7396;
+        color: #ff7396;
+      }
+      &:last-child {
+        background: $primary-color;
+        color: $white-color;
+      }
+    }
+  }
+}

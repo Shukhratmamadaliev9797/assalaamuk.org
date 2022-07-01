@@ -1,0 +1,83 @@
+.header {
+  background: $background-color;
+
+  width: 100%;
+
+  &__text {
+    width: 100%;
+    height: 100%;
+
+    &-container {
+      width: 80%;
+      padding: 2rem 0;
+      h1 {
+        color: $primary-text;
+        font-family: "Abril Fatface", cursive;
+        font-size: 7rem;
+      }
+      p {
+        color: $secondary-text;
+        font-family: $secondary-font;
+        line-height: 1.5;
+      }
+    }
+  }
+  &__images {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-container {
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+  &__action {
+    margin-top: 2rem;
+    button {
+      padding: 1rem 2rem;
+      border-radius: 0.8rem;
+      margin-right: 2rem;
+      font-size: 1.5rem;
+      &:nth-child(1) {
+        background: $primary-color;
+        color: $white-color;
+        border: 1px solid $primary-color;
+      }
+      &:nth-child(2) {
+        border: 1px solid $primary-color;
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+.swiper {
+  height: 100%;
+  width: 80%;
+
+  margin: 0 auto !important;
+}
+
+.swiper-slide {
+  font-size: 18px;
+  background: $background-color;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  image {
+  }
+}

@@ -1,0 +1,28 @@
+.projects {
+  position: absolute;
+  left: 30rem;
+  width: calc(100% - 300px);
+  height: 100vh;
+  top: 8vh;
+  &__container {
+    width: 95%;
+    margin: 3rem auto;
+  }
+  &__title {
+    margin: 2rem 0rem;
+    font-size: 1rem;
+    color: $primary-text;
+    font-family: $primary-font;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button {
+      padding: 1rem 1rem;
+      font-size: 1.2rem;
+      border-radius: 0.5rem;
+      border: 1px solid #ddd;
+      background: $primary-color;
+      color: $white-color;
+    }
+  }
+}
