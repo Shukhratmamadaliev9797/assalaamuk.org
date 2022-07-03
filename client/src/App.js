@@ -16,6 +16,7 @@ import News from "./pages/admin/News";
 import Basket from "./pages/Basket";
 import Checkout from "./pages/Checkout";
 import PaymentSuccess from "./pages/PaymentSuccess";
+import About from "./pages/About";
 function App() {
   const [pathName, setPathName] = useState("");
   const [pathStatus, setPathStatus] = useState(false);
@@ -55,6 +56,7 @@ function App() {
         />
         <AdminRouter path="/admin/news" exact component={() => <News />} />
         <Route path="/" exact component={Home} />
+        <Route path="/about" exact component={About} />
         <Route path="/basket" exact component={Basket} />
         <Route path="/error" exact component={MainErrorMessage} />
         <Route path="/checkout" exact component={Checkout} />
