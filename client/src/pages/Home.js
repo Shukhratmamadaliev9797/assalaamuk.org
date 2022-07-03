@@ -1,7 +1,8 @@
 import React from "react";
 import Activities from "../components/Activities";
 import Hero from "../components/Hero";
-import Projects from "./Projects";
+import News from "../components/News";
+import Projects from "../components/Projects";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <Hero />
       <Activities />
       <Projects />
+      <News />
     </div>
   );
 }

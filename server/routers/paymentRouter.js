@@ -7,7 +7,7 @@ const paymentRouter = express.Router();
 
 paymentRouter.post("/stripe-payment", (req, res) => {
   const { amount, email, token } = req.body;
-  const stripe = new Stripe(config.Stripe, null);
+  const stripe = new Stripe(process.env.stripeSecretKey, null);
 
   stripe.customers
     .create({
