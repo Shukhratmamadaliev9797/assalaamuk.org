@@ -84,4 +84,15 @@ newsRouter.put(
   })
 );
 
+newsRouter.get(
+  "/:id",
+  expressAsyncHandler(async (req, res) => {
+    const news = await News.findById(req.params.id);
+    if (news) {
+      res.send(news);
+    } else {
+      res.status(404).send({ message: "News Not Found" });
+    }
+  })
+);
 export default newsRouter;

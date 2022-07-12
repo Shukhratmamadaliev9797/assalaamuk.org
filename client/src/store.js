@@ -3,6 +3,7 @@ import thunk from "redux-thunk";
 import {
   acitivityCreateReducers,
   activityDeleteReducer,
+  activityDetailsReducer,
   activityListReducer,
   activityUpdateReducer,
 } from "./reducers/activityReducers";
@@ -10,13 +11,16 @@ import { cartReducer } from "./reducers/cartReducers";
 import {
   newsCreateReducers,
   newsDeleteReducer,
+  newsDetailsReducer,
   newsListReducer,
   newsUpdateReducer,
 } from "./reducers/newsReducers";
 import {
   projectCreateReducers,
   projectDeleteReducer,
+  projectDetailsReducer,
   projectListReducer,
+  projectRelatedListReducer,
   projectUpdateReducer,
 } from "./reducers/projectReducers";
 import {
@@ -50,14 +54,18 @@ const reducer = combineReducers({
   activityLists: activityListReducer,
   activityDelete: activityDeleteReducer,
   activityUpdate: activityUpdateReducer,
+  activityDetails: activityDetailsReducer,
   projectCreate: projectCreateReducers,
   projectLists: projectListReducer,
   projectDelete: projectDeleteReducer,
   projectUpdate: projectUpdateReducer,
+  projectDetails: projectDetailsReducer,
+  projectRelated: projectRelatedListReducer,
   newsCreate: newsCreateReducers,
   newsLists: newsListReducer,
   newsDelete: newsDeleteReducer,
   newsUpdate: newsUpdateReducer,
+  newsDetails: newsDetailsReducer,
   cart: cartReducer,
 });
 

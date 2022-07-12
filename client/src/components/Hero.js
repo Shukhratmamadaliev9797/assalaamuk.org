@@ -18,7 +18,7 @@ export default function Hero() {
               heart
             </p>
             <div className="hero__content-action">
-              <Link to="/aboutus">Read more...</Link>
+              <Link to="/about">Read more...</Link>
               <Link to="/projects">Our Projects</Link>
             </div>
           </div>

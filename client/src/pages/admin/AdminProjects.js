@@ -6,7 +6,7 @@ import CreateProject from "../../modals/CreateProject";
 import Delete from "../../modals/Delete";
 import EditProject from "../../modals/EditProject";
 
-export default function Projects() {
+export default function AdminProjects() {
   const [createProjectModal, setCreateProjectModal] = useState(false);
   const [deleteProjectModal, setDeleteProjectModal] = useState(false);
   const [editProjectModal, setEditProjectModal] = useState(false);

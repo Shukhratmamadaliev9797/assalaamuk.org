@@ -1,0 +1,187 @@
+.newsPage {
+  &__container {
+    width: 100%;
+  }
+  &__header {
+    width: 100%;
+    background: linear-gradient(
+        171.8deg,
+        rgb(80, 95, 162) 1%,
+        rgba(65, 88, 158, 0.681) 1%
+      ),
+      url("../../images/activityHeader.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    min-height: 25vh;
+    &-content {
+      display: grid;
+      grid-template-columns: 70% 30%;
+      height: 100%;
+      &-left {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        height: 100%;
+        // align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        h1 {
+          font-family: $primary-font;
+          color: $white-color;
+          padding: 2rem 0;
+          font-size: 4rem;
+          span {
+            color: #ff7396;
+          }
+        }
+      }
+    }
+  }
+  &__main {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    &-left {
+      width: 85%;
+      margin: 0 auto;
+      &-mainBlock {
+        img {
+          width: 100%;
+          height: 45vh;
+          margin: 2rem 0;
+          border-radius: 0.8rem;
+          overflow: hidden;
+        }
+      }
+      &-block {
+        margin-bottom: 2rem;
+        h3 {
+          font-family: "Source Sans Pro", sans-serif;
+          font-size: 2rem;
+          border-bottom: 1px solid #ddd;
+          padding-bottom: 1.5rem;
+          margin-bottom: 1.5rem;
+        }
+        p {
+          font-family: $secondary-font;
+          color: $secondary-text;
+          font-size: 1.4rem;
+          line-height: 1.5;
+          margin-bottom: 2rem;
+        }
+        img {
+          width: 100%;
+          height: 45vh;
+          margin: 2rem 0;
+          border-radius: 0.8rem;
+          overflow: hidden;
+        }
+      }
+    }
+    &-right {
+      width: 80%;
+      // margin: 0 auto;
+      h5 {
+        margin: 2rem 0;
+        font-family: $primary-font;
+        font-size: 2rem;
+        color: $primary-text;
+      }
+      ul {
+        li {
+          margin-bottom: 2rem;
+          padding-bottom: 2rem;
+          border-bottom: 1px solid #ddd;
+          a {
+            color: $secondary-text;
+          }
+          h6 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-family: "Source Sans Pro", sans-serif;
+          }
+          img {
+            width: 100%;
+            height: 25vh;
+            border-radius: 0.5rem;
+          }
+          p {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+  &__donateBox {
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: $white-color;
+    border-radius: 0.8rem;
+    &-title {
+      font-size: 2rem;
+      font-family: $primary-font;
+      color: $primary-text;
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #ddd;
+      span {
+        color: #ff7396;
+      }
+    }
+    &-paragraph {
+      font-size: 1.4rem;
+      font-family: "Source Sans Pro", sans-serif;
+      margin-bottom: 1.5rem;
+    }
+    &-progress {
+      margin-bottom: 1.5rem;
+    }
+    &-totalAmount {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      div {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.4rem;
+        span {
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+    &-donateAmount {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      div {
+        padding: 1rem 0.5rem;
+        font-size: 1.4rem;
+        text-align: center;
+        color: $primary-color;
+        border-radius: 0.5rem;
+        border: 1px solid $primary-color;
+      }
+    }
+    &-donateForm {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 80% 20%;
+      input {
+        padding: 1rem;
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+        border: 1px solid #ddd;
+      }
+      button {
+        border-top-right-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+        border: 1px solid $primary-color;
+        color: $white-color;
+        background: $primary-color;
+      }
+    }
+  }
+}

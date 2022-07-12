@@ -7,6 +7,9 @@ import {
   ACTIVITY_DELETE_REQUEST,
   ACTIVITY_DELETE_RESET,
   ACTIVITY_DELETE_SUCCESS,
+  ACTIVITY_DETAILS_FAIL,
+  ACTIVITY_DETAILS_REQUEST,
+  ACTIVITY_DETAILS_SUCCESS,
   ACTIVITY_LIST_FAIL,
   ACTIVITY_LIST_REQUEST,
   ACTIVITY_LIST_SUCCESS,
@@ -69,6 +72,19 @@ export const activityUpdateReducer = (state = {}, action) => {
       return { loading: false, error: action.payload };
     case ACTIVITY_UPDATE_RESET:
       return {};
+    default:
+      return state;
+  }
+};
+
+export const activityDetailsReducer = (state = { loading: true }, action) => {
+  switch (action.type) {
+    case ACTIVITY_DETAILS_REQUEST:
+      return { loading: true };
+    case ACTIVITY_DETAILS_SUCCESS:
+      return { loading: false, activity: action.payload };
+    case ACTIVITY_DETAILS_FAIL:
+      return { loading: false, error: action.payload };
     default:
       return state;
   }

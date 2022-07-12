@@ -7,9 +7,15 @@ import {
   PROJECT_DELETE_REQUEST,
   PROJECT_DELETE_RESET,
   PROJECT_DELETE_SUCCESS,
+  PROJECT_DETAILS_FAIL,
+  PROJECT_DETAILS_REQUEST,
+  PROJECT_DETAILS_SUCCESS,
   PROJECT_LIST_FAIL,
   PROJECT_LIST_REQUEST,
   PROJECT_LIST_SUCCESS,
+  PROJECT_RELATED_LIST_FAIL,
+  PROJECT_RELATED_LIST_REQUEST,
+  PROJECT_RELATED_LIST_SUCCESS,
   PROJECT_UPDATE_FAIL,
   PROJECT_UPDATE_REQUEST,
   PROJECT_UPDATE_RESET,
@@ -69,6 +75,35 @@ export const projectUpdateReducer = (state = {}, action) => {
       return { loading: false, error: action.payload };
     case PROJECT_UPDATE_RESET:
       return {};
+    default:
+      return state;
+  }
+};
+
+export const projectDetailsReducer = (state = { loading: true }, action) => {
+  switch (action.type) {
+    case PROJECT_DETAILS_REQUEST:
+      return { loading: true };
+    case PROJECT_DETAILS_SUCCESS:
+      return { loading: false, project: action.payload };
+    case PROJECT_DETAILS_FAIL:
+      return { loading: false, error: action.payload };
+    default:
+      return state;
+  }
+};
+
+export const projectRelatedListReducer = (
+  state = { loading: true },
+  action
+) => {
+  switch (action.type) {
+    case PROJECT_RELATED_LIST_REQUEST:
+      return { loading: true };
+    case PROJECT_RELATED_LIST_SUCCESS:
+      return { loading: false, projects: action.payload };
+    case PROJECT_RELATED_LIST_FAIL:
+      return { loading: false, error: action.payload };
     default:
       return state;
   }

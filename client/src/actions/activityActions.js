@@ -6,6 +6,9 @@ import {
   ACTIVITY_DELETE_FAIL,
   ACTIVITY_DELETE_REQUEST,
   ACTIVITY_DELETE_SUCCESS,
+  ACTIVITY_DETAILS_FAIL,
+  ACTIVITY_DETAILS_REQUEST,
+  ACTIVITY_DETAILS_SUCCESS,
   ACTIVITY_LIST_FAIL,
   ACTIVITY_LIST_REQUEST,
   ACTIVITY_LIST_SUCCESS,
@@ -226,6 +229,24 @@ export const updateActivity = (
           ? error.response.data.message
           : error.message;
       dispatch({ type: ACTIVITY_UPDATE_FAIL, payload: message });
+    }
+  };
+};
+
+export const detailsActivity = (activityId) => {
+  return async (dispatch) => {
+    dispatch({ type: ACTIVITY_DETAILS_REQUEST, payload: activityId });
+    try {
+      const { data } = await axios.get(`/api/activities/${activityId}`);
+      dispatch({ type: ACTIVITY_DETAILS_SUCCESS, payload: data });
+    } catch (error) {
+      dispatch({
+        type: ACTIVITY_DETAILS_FAIL,
+        payload:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message,
+      });
     }
   };
 };

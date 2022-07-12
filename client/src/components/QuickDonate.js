@@ -22,18 +22,20 @@ export default function QuickDonate(props) {
   } = activityLists;
 
   const cart = useSelector((state) => state.cart);
-  const { cartItems, error, success } = cart;
+  const { cartItems } = cart;
 
   useEffect(() => {
     dispatch(listActivity());
-    if (success) {
-      setAddedCart(true);
+
+    if (cartItems) {
+      setId(cartItems.length);
     }
-  }, [dispatch, success]);
+  }, [dispatch, cartItems]);
 
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(addToCart(id, type, amount));
+    setAddedCart(true);
   };
 
   return (

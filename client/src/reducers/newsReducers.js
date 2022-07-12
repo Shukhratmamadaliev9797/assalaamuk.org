@@ -7,6 +7,9 @@ import {
   NEWS_DELETE_REQUEST,
   NEWS_DELETE_RESET,
   NEWS_DELETE_SUCCESS,
+  NEWS_DETAILS_FAIL,
+  NEWS_DETAILS_REQUEST,
+  NEWS_DETAILS_SUCCESS,
   NEWS_LIST_FAIL,
   NEWS_LIST_REQUEST,
   NEWS_LIST_SUCCESS,
@@ -69,6 +72,19 @@ export const newsUpdateReducer = (state = {}, action) => {
       return { loading: false, error: action.payload };
     case NEWS_UPDATE_RESET:
       return {};
+    default:
+      return state;
+  }
+};
+
+export const newsDetailsReducer = (state = { loading: true }, action) => {
+  switch (action.type) {
+    case NEWS_DETAILS_REQUEST:
+      return { loading: true };
+    case NEWS_DETAILS_SUCCESS:
+      return { loading: false, news: action.payload };
+    case NEWS_DETAILS_FAIL:
+      return { loading: false, error: action.payload };
     default:
       return state;
   }

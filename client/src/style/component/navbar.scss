@@ -2,24 +2,24 @@
   &__container {
     width: 100%;
     padding: 1rem 0;
-    background-color: $background-color;
-    ul {
-      width: 90%;
-      // padding: 1rem;
-      margin: 0 auto;
-      height: 100%;
-      display: flex;
-      justify-content: space-around;
-      font-size: 1.7rem;
-      align-items: center;
+    background: #033b65;
+  }
+  &__menu {
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.8rem;
+    align-items: center;
+    color: $secondary-font !important;
+    transition: 0.5s linear;
+    li {
+      cursor: pointer;
 
-      color: $secondary-font !important;
-      li {
-        cursor: pointer;
-
-        a {
-          color: $secondary-text;
-        }
+      a {
+        // color: $secondary-text;
+        color: $white-color;
       }
     }
   }
@@ -45,14 +45,120 @@
     }
   }
   &__basket {
-    background: $secondary-color;
-    color: $white-color !important;
+    background: $white-color;
+    color: $primary-color !important;
     padding: 1.2rem 2rem;
     border-radius: 0.8rem;
     font-size: 1.7rem;
     font-family: $secondary-font;
     a {
-      color: $white-color !important;
+      color: $secondary-text !important;
+    }
+  }
+  &__activities {
+    position: relative;
+    &:hover {
+      ul {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    ul {
+      opacity: 0;
+      visibility: hidden;
+      width: 200%;
+      left: -1rem;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      z-index: 2222222;
+      top: 5rem;
+      background-color: $background-color;
+      border-radius: 0.5rem;
+      transition: 0.3s linear;
+
+      li {
+        padding: 1rem;
+        width: 90%;
+
+        border-bottom: 1px solid #ddd;
+        &:last-child {
+          border-bottom: none;
+        }
+        a {
+          color: $secondary-text;
+        }
+      }
+    }
+  }
+  &__user {
+    position: relative;
+    &:hover {
+      ul {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    ul {
+      opacity: 0;
+      visibility: hidden;
+      width: 200%;
+      left: -1rem;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      z-index: 2222222;
+      top: 5rem;
+      background-color: $background-color;
+      border-radius: 0.5rem;
+      transition: 0.3s linear;
+      li {
+        padding: 1rem;
+        width: 90%;
+        color: $secondary-text;
+        border-bottom: 1px solid #ddd;
+        &:last-child {
+          border-bottom: none;
+        }
+        a {
+          color: $secondary-text;
+        }
+      }
+    }
+  }
+  &__projects {
+    position: relative;
+    &:hover {
+      ul {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    ul {
+      opacity: 0;
+      visibility: hidden;
+      width: 20rem;
+      left: -1rem;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      z-index: 2222222;
+      top: 5rem;
+      background-color: $background-color;
+      border-radius: 0.5rem;
+      transition: 0.3s linear;
+      li {
+        padding: 1rem;
+        width: 90%;
+        color: $secondary-text;
+        border-bottom: 1px solid #ddd;
+        &:last-child {
+          border-bottom: none;
+        }
+        a {
+          color: $secondary-text;
+        }
+      }
     }
   }
 }

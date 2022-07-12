@@ -10,12 +10,19 @@ import AdminNav from "./components/AdminNav";
 import AdminTopBar from "./components/AdminTopBar";
 import Users from "./pages/admin/Users";
 import AdminRouter from "./components/AdminRouter";
-import Activities from "./pages/admin/Activities";
-import Projects from "./pages/admin/Projects";
+import AdminActivities from "./pages/admin/AdminActivities";
+import AdminProjects from "./pages/admin/AdminProjects";
 import News from "./pages/admin/News";
 import Basket from "./pages/Basket";
 import Checkout from "./pages/Checkout";
 import PaymentSuccess from "./pages/PaymentSuccess";
+import Projects from "./pages/Projects";
+import About from "./pages/About";
+import Activitiy from "./pages/Activitiy";
+import Project from "./pages/Project";
+import Profile from "./pages/Profile";
+import NewsPage from "./pages/NewsPage";
+import NewsList from "./pages/NewsList";
 function App() {
   const [pathName, setPathName] = useState("");
   const [pathStatus, setPathStatus] = useState(false);
@@ -46,12 +53,12 @@ function App() {
         <AdminRouter
           path="/admin/activities"
           exact
-          component={() => <Activities />}
+          component={() => <AdminActivities />}
         />
         <AdminRouter
           path="/admin/projects"
           exact
-          component={() => <Projects />}
+          component={() => <AdminProjects />}
         />
         <AdminRouter path="/admin/news" exact component={() => <News />} />
         <Route path="/" exact component={Home} />
@@ -59,6 +66,13 @@ function App() {
         <Route path="/error" exact component={MainErrorMessage} />
         <Route path="/checkout" exact component={Checkout} />
         <Route path="/paymentSuccess" exact component={PaymentSuccess} />
+        <Route path="/projects" exact component={Projects} />
+        <Route path="/about" exact component={About} />
+        <Route path="/activity/:id" exact component={Activitiy} />
+        <Route path="/project/:id" exact component={Project} />
+        <Route path="/profile" exact component={Profile} />
+        <Route path="/news/:id" exact component={NewsPage} />
+        <Route path="/news" exact component={NewsList} />
       </Router>
     </>
   );

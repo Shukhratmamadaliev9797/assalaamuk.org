@@ -1,0 +1,116 @@
+.profile {
+  width: 100%;
+  &__container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+  }
+  &__content {
+    margin-top: 6rem;
+    display: grid;
+    grid-template-columns: 20% 80%;
+  }
+  &__menu {
+    ul {
+      background: $white-color;
+      width: 90%;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      li {
+        font-size: 1.5rem;
+        padding: 1rem;
+        font-size: 1.4rem;
+        border-bottom: 1px solid #ddd;
+        color: $secondary-text;
+        &:last-child {
+          border: none;
+        }
+        a {
+          color: $secondary-text;
+        }
+      }
+    }
+    &-active {
+      background: $primary-color;
+      a {
+        color: $white-color !important;
+      }
+    }
+  }
+  &__profile {
+    background-color: $white-color;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    &-image {
+      font-size: 12rem;
+      text-align: center;
+      padding: 2rem;
+    }
+    &-title {
+      font-size: 1.5rem;
+      margin: 1rem 0;
+      font-family: $primary-font;
+      color: $primary-text;
+      span {
+        color: #ff7396;
+      }
+    }
+  }
+  &__info {
+    &-inputBox {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1rem;
+      margin-bottom: 2rem;
+      div {
+        label {
+          display: block;
+          font-size: 1.5rem;
+          margin-bottom: 0.5rem;
+          color: $secondary-text;
+        }
+        input {
+          width: 100%;
+          padding: 0.8rem;
+          font-size: 1.5rem;
+          border-radius: 0.5rem;
+          border: 1px solid #ddd;
+        }
+      }
+    }
+    &-inputBoxFull {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 1rem;
+      margin-bottom: 2rem;
+      div {
+        label {
+          display: block;
+          font-size: 1.5rem;
+          margin-bottom: 0.5rem;
+          color: $secondary-text;
+        }
+        input {
+          width: 100%;
+          font-size: 1.5rem;
+          padding: 0.8rem;
+          border-radius: 0.5rem;
+          border: 1px solid #ddd;
+        }
+      }
+    }
+    &-buttonBox {
+      width: 100%;
+      button {
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 1.5rem;
+        border: none;
+        background: $primary-color;
+        color: $white-color;
+        border-radius: 0.5rem;
+      }
+    }
+  }
+}

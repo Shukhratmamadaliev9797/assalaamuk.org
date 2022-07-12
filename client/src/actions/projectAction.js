@@ -6,9 +6,15 @@ import {
   PROJECT_DELETE_FAIL,
   PROJECT_DELETE_REQUEST,
   PROJECT_DELETE_SUCCESS,
+  PROJECT_DETAILS_FAIL,
+  PROJECT_DETAILS_REQUEST,
+  PROJECT_DETAILS_SUCCESS,
   PROJECT_LIST_FAIL,
   PROJECT_LIST_REQUEST,
   PROJECT_LIST_SUCCESS,
+  PROJECT_RELATED_LIST_FAIL,
+  PROJECT_RELATED_LIST_REQUEST,
+  PROJECT_RELATED_LIST_SUCCESS,
   PROJECT_UPDATE_FAIL,
   PROJECT_UPDATE_REQUEST,
   PROJECT_UPDATE_SUCCESS,
@@ -216,6 +222,42 @@ export const updateProject = (
           ? error.response.data.message
           : error.message;
       dispatch({ type: PROJECT_UPDATE_FAIL, payload: message });
+    }
+  };
+};
+
+export const detailsProject = (projectId) => {
+  return async (dispatch) => {
+    dispatch({ type: PROJECT_DETAILS_REQUEST, payload: projectId });
+    try {
+      const { data } = await axios.get(`/api/projects/${projectId}`);
+      dispatch({ type: PROJECT_DETAILS_SUCCESS, payload: data });
+    } catch (error) {
+      dispatch({
+        type: PROJECT_DETAILS_FAIL,
+        payload:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message,
+      });
+    }
+  };
+};
+
+export const relatedListProjects = (projectId) => {
+  return async (dispatch) => {
+    dispatch({ type: PROJECT_RELATED_LIST_REQUEST, payload: projectId });
+    try {
+      const { data } = await axios.get(
+        `/api/projects/relatedProjects/${projectId}`
+      );
+      dispatch({ type: PROJECT_RELATED_LIST_SUCCESS, payload: data });
+    } catch (error) {
+      const message =
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message;
+      dispatch({ type: PROJECT_RELATED_LIST_FAIL, payload: message });
     }
   };
 };

@@ -108,5 +108,26 @@ userRouter.put(
     }
   })
 );
+userRouter.put(
+  "/profile/:id",
+  isAuth,
+  expressAsyncHandler(async (req, res) => {
+    const user = await User.findById(req.params.id);
+    if (user) {
+      user.firstName = req.body.firstName || user.firstName;
+      user.lastName = req.body.lastName || user.lastName;
+      user.email = req.body.email || user.email;
+      user.phone = req.body.phone || user.phone;
+      user.address = req.body.address || user.address;
+      user.password = req.body.password || user.password;
+
+      const updatedProfile = await user.save();
+      res.send({
+        message: "Profile Updated",
+        user: updatedProfile,
+      });
+    }
+  })
+);
 
 export default userRouter;

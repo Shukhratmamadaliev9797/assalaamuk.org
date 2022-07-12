@@ -92,4 +92,27 @@ projectRouter.put(
   })
 );
 
+projectRouter.get(
+  "/:id",
+  expressAsyncHandler(async (req, res) => {
+    const project = await Project.findById(req.params.id);
+    if (project) {
+      res.send(project);
+    } else {
+      res.status(404).send({ message: "Project Not Found" });
+    }
+  })
+);
+
+projectRouter.get(
+  "/relatedProjects/:id",
+  expressAsyncHandler(async (req, res) => {
+    const project = await Project.findById(req.params.id);
+    const projects = await Project.find({});
+    const relatedProjects = projects.filter((x) => {
+      return x.category === project.category;
+    });
+    res.send(relatedProjects);
+  })
+);
 export default projectRouter;

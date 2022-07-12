@@ -98,4 +98,17 @@ activityRouter.put(
   })
 );
 
+activityRouter.get(
+  "/:id",
+  expressAsyncHandler(async (req, res) => {
+    const activity = await Activity.findById(req.params.id);
+    if (activity) {
+      res.send(activity);
+      console.log(activity);
+    } else {
+      res.status(404).send({ message: "Activity Not Found" });
+    }
+  })
+);
+
 export default activityRouter;

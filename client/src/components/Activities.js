@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { listActivity } from "../actions/activityActions";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Title from "./Title";
 export default function Activities() {
   const [activity, setActivity] = useState();
-
+  const [activityId, setActivityId] = useState("");
   const dispatch = useDispatch();
+  const history = useHistory();
   const activityLists = useSelector((state) => state.activityLists);
   const {
     loading: listLoading,
     error: listError,
     activityList,
   } = activityLists;
+
   useEffect(() => {
     dispatch(listActivity());
   }, [dispatch]);
@@ -21,8 +23,13 @@ export default function Activities() {
     setActivity(activityList.find((act) => act._id === activity._id));
   };
 
+  const pushProjects = (e) => {
+    e.preventDefault();
+    history.push("/projects");
+  };
+
   return (
-    <div className="activitiesComponent">
+    <div className="activitiesComponent" id="#activities">
       <div className="activitiesComponent__container">
         <Title>Activities</Title>
         <ul className="activitiesComponent__categories">
@@ -32,11 +39,22 @@ export default function Activities() {
             ? listError
             : activityList.map((activity) => {
                 return (
-                  <li key={activity._id} onClick={() => findActivity(activity)}>
+                  <li
+                    className="activitiesComponent__categories-category"
+                    key={activity._id}
+                    onClick={() => {
+                      findActivity(activity);
+                      setActivityId(activity._id);
+                    }}
+                  >
                     <i
-                      className={`activitiesComponent__categories-icon  ${activity.icon}`}
+                      className={`activitiesComponent__categories-category-icon ${
+                        activityId === activity._id
+                          ? "activitiesComponent__categories-category-icon-active"
+                          : ""
+                      }  ${activity.icon}`}
                     ></i>
-                    <hr />
+
                     <span>{activity.title}</span>
                   </li>
                 );
@@ -50,11 +68,11 @@ export default function Activities() {
               <p>{activity?.paragraph1.substring(0, 450)}...</p>
               <div className="activitiesComponent__activity-action">
                 <Link to={`/activity/${activity?._id}`}>Read More</Link>
-                <button>Donate</button>
+                <button onClick={pushProjects}>Donate</button>
               </div>
             </div>
             <div className="activitiesComponent__activity-image">
-              <img src={activity?.image} alt={activity?.title} />
+              <img src="./images/modal/login.jpeg" alt={activity?.title} />
             </div>
           </div>
         ) : (
@@ -72,12 +90,12 @@ export default function Activities() {
                     <Link to={`/activity/${activityList[0]?._id}`}>
                       Read More...
                     </Link>
-                    <button>Donate</button>
+                    <button onClick={pushProjects}>Donate</button>
                   </div>
                 </div>
                 <div className="activitiesComponent__activity-image">
                   <img
-                    src={activityList[0]?.image}
+                    src="./images/modal/login.jpeg"
                     alt={activityList[0]?.title}
                   />
                 </div>

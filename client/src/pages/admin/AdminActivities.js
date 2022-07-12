@@ -6,7 +6,7 @@ import CreateActivity from "../../modals/CreateActivity";
 import Delete from "../../modals/Delete";
 import EditActivity from "../../modals/EditActivity";
 
-export default function Activities() {
+export default function AdminActivities() {
   const [createActivityModal, setCreateActivityModal] = useState(false);
   const [deleteActivityModal, setDeleteActivityModal] = useState(false);
   const [editActivityModal, setEditActivityModal] = useState(false);

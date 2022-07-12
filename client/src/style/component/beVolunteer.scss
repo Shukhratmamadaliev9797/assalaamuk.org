@@ -1,0 +1,39 @@
+.beVolunteer {
+  width: 100%;
+  background: linear-gradient(
+      171.8deg,
+      rgb(80, 95, 162) 0%,
+      rgba(50, 65, 111, 0.741) 1%
+    ),
+    url("../../images/beVolunteer.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 5rem;
+  &__content {
+    color: $white-color;
+    text-align: center;
+    h1 {
+      font-size: 4rem;
+      font-family: $primary-font;
+      margin-bottom: 2rem;
+      span {
+        color: #ff7396;
+      }
+    }
+    p {
+      font-size: 2rem;
+      width: 40%;
+      margin: 0 auto;
+      margin-bottom: 2rem;
+    }
+    button {
+      padding: 1rem 2rem;
+      font-size: 2rem;
+      border-radius: 0.5rem;
+      border: 1px solid $primary-color;
+      color: $white-color;
+      background: $primary-color;
+    }
+  }
+}

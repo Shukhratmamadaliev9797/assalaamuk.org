@@ -12,17 +12,31 @@
     width: 80%;
     margin: 0 auto;
     font-size: 2rem;
-
-    li {
+    &-category {
       cursor: pointer;
       text-align: center;
       color: $secondary-text;
-      hr {
-        margin: 2rem 0;
+      display: flex;
+      flex-direction: column;
+      transition: 0.5s linear;
+
+      &:hover {
+        &-icon {
+          border-bottom: 1px solid red;
+        }
       }
-    }
-    &-icon {
-      font-size: 3rem;
+
+      &-icon {
+        font-size: 3rem;
+        border-bottom: 1px solid $secondary-text;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1.5rem;
+        &-active {
+          padding-bottom: 1.333rem;
+          color: #ff7396;
+          border-bottom: 4px solid $primary-color;
+        }
+      }
     }
   }
   &__activity {
@@ -61,6 +75,7 @@
         border-radius: 0.5rem;
         border: none;
         color: $white-color;
+        cursor: pointer;
       }
     }
     &-image {

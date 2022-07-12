@@ -6,6 +6,9 @@ import {
   NEWS_DELETE_FAIL,
   NEWS_DELETE_REQUEST,
   NEWS_DELETE_SUCCESS,
+  NEWS_DETAILS_FAIL,
+  NEWS_DETAILS_REQUEST,
+  NEWS_DETAILS_SUCCESS,
   NEWS_LIST_FAIL,
   NEWS_LIST_REQUEST,
   NEWS_LIST_SUCCESS,
@@ -184,6 +187,24 @@ export const updateNews = (
           ? error.response.data.message
           : error.message;
       dispatch({ type: NEWS_UPDATE_FAIL, payload: message });
+    }
+  };
+};
+
+export const detailsNews = (newsId) => {
+  return async (dispatch) => {
+    dispatch({ type: NEWS_DETAILS_REQUEST, payload: newsId });
+    try {
+      const { data } = await axios.get(`/api/news/${newsId}`);
+      dispatch({ type: NEWS_DETAILS_SUCCESS, payload: data });
+    } catch (error) {
+      dispatch({
+        type: NEWS_DETAILS_FAIL,
+        payload:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message,
+      });
     }
   };
 };

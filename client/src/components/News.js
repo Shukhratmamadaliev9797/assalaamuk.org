@@ -26,21 +26,26 @@ export default function News() {
               return (
                 <div className="newsComponent__news">
                   <div className="newsComponent__news-image">
-                    <img src={news.image} alt={news.title} />
+                    <img src="./images/modal/login.jpeg" alt={news.title} />
                   </div>
                   <div className="newsComponent__news-title">
-                    <h1>{news.title.substring(0, 100)}</h1>
+                    <h1>{news.title.substring(0, 55)}...</h1>
                   </div>
                   <div className="newsComponent__news-paragraph">
                     <p>{news.paragraph1.substring(0, 250)}...</p>
                   </div>
                   <div className="newsComponent__news-action">
-                    <Link>Read More...</Link>
+                    <Link to={`/news/${news._id}`}>Read More...</Link>
                   </div>
                 </div>
               );
             })
           )}
+        </div>
+        <div className="projectsComponent__all">
+          <Link to="/news">
+            View all news <i class="fa-solid fa-arrow-right"></i>
+          </Link>
         </div>
       </div>
     </div>

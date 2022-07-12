@@ -1,0 +1,66 @@
+.successProjects {
+  width: 100%;
+  background: linear-gradient(
+      171.8deg,
+      rgb(80, 95, 162) 0%,
+      rgba(64, 84, 144, 0.593) 1%
+    ),
+    url("../../images/successProject.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 5rem;
+  &__title {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    h1 {
+      font-size: 4rem;
+      color: $white-color;
+      font-family: $primary-font;
+      margin-bottom: 1rem;
+      span {
+        color: #ff7396;
+      }
+    }
+    p {
+      font-family: $secondary-font;
+      color: $white-color;
+
+      font-size: 1.5rem;
+      width: 60%;
+      margin: 0 auto;
+      margin-bottom: 5rem;
+    }
+  }
+  &__body {
+    width: 80%;
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &-icon {
+      font-size: 6rem;
+      color: #ff7396;
+      margin-bottom: 2rem;
+    }
+    span {
+      color: $white-color;
+      font-size: 2rem;
+      &:nth-child(2) {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+        font-family: $primary-font;
+      }
+      &:last-child {
+        font-size: 2rem;
+      }
+    }
+  }
+}
