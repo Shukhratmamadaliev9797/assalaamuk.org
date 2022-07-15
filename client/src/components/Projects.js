@@ -9,36 +9,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { listProject } from "../actions/projectAction";
 import MainLoader from "./MainLoader";
 import ProgressBar from "@ramonak/react-progress-bar";
-import { addToCart } from "../actions/cartActions";
 import { Link, useHistory } from "react-router-dom";
+import ProjectDonateForm from "./ProjectDonateForm";
 import CartAdded from "../modals/CartAdded";
 
 export default function Projects() {
-  const [type, setType] = useState("");
-  const [amount, setAmount] = useState();
-  const [id, setId] = useState();
   const [addedCart, setAddedCart] = useState(false);
-  const history = useHistory();
-  const cart = useSelector((state) => state.cart);
-  const { cartItems, error, success } = cart;
-
   const projectLists = useSelector((state) => state.projectLists);
   const { loading: listLoading, error: listError, projectList } = projectLists;
   const dispatch = useDispatch();
-
+  const history = useHistory();
   useEffect(() => {
     dispatch(listProject());
-
-    if (cartItems) {
-      setId(cartItems.length);
-    }
-  }, [dispatch, success, cartItems]);
-
-  const submitHandler = (e) => {
-    e.preventDefault();
-    dispatch(addToCart(id, type, amount));
-    setAddedCart(true);
-  };
+  }, [dispatch]);
 
   return (
     <>
@@ -66,12 +49,11 @@ export default function Projects() {
               spaceBetween={30}
               slidesPerGroup={4}
               loop={true}
-              loopFillGroupWithBlank={true}
+              // loopFillGroupWithBlank={true}
               pagination={{
                 clickable: true,
               }}
-              navigation={true}
-              modules={[Pagination, Navigation]}
+              modules={[Navigation]}
               className="mySwiper"
             >
               {listLoading ? (
@@ -111,6 +93,10 @@ export default function Projects() {
                           height="14px"
                         />
                       </div>
+                      <ProjectDonateForm
+                        project={project}
+                        addedCart={() => setAddedCart(true)}
+                      />
                     </SwiperSlide>
                   );
                 })
